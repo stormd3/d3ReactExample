@@ -33,13 +33,15 @@ export default ({
       className={contentContainerGroupClassName}
       style={getContentContainerStyle({ margin })}
     >
-      <rect
-        className={contentContainerBackgroundRectClassName}
-        height={height}
-        width={width}
-        x={0}
-        y={0}
-      />
+      {!!contentContainerBackgroundRectClassName && (
+        <rect
+          className={contentContainerBackgroundRectClassName}
+          height={height}
+          width={width}
+          x={0}
+          y={0}
+        />
+      )}
       {children}
     </g>
   </svg>
